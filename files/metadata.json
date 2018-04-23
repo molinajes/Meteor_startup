@@ -1,0 +1,5501 @@
+{
+	"version": 110,
+	"classList": [
+		{
+			"objectType": "root",
+			"derivedFrom": [
+			],
+			"members": [
+				{
+					"name": "application",
+					"title": "Application",
+					"type": "application",
+					"subType": "",
+					"default": "",
+					"required": true,
+					"input": ""
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "object",
+			"derivedFrom": [
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "object_name",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Object name"
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "field",
+			"derivedFrom": [
+				"object"
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "object_name",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Object name"
+				},
+				{
+					"name": "title",
+					"title": "Title",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Field title (used in form labels, table column headers etc.)"
+				},
+				{
+					"name": "type",
+					"title": "Type",
+					"type": "string",
+					"subType": "",
+					"default": "string",
+					"required": true,
+					"input": "select",
+					"choice_items": [
+						"string",
+						"integer",
+						"float",
+						"date",
+						"time",
+						"bool",
+						"array",
+						"object",
+						"email"
+					],
+					"description": "Field data type used in form validations. Examples: \"string\", \"integer\", \"float\", \"date\", \"time\", \"bool\", \"array\", \"email\", \"random_string\". Default: \"string\""
+				},
+				{
+					"name": "default",
+					"title": "Default value",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Default value. For date fields you can use special constant \"today\", for time fields you can use \"now\". Also, you can set helper here \"{{myHelper}}\"."
+				},
+				{
+					"name": "min",
+					"title": "Min. value",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Minimum value (only for numeric fields)"
+				},
+				{
+					"name": "max",
+					"title": "Max. value",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Maximum value (only for numeric fields)"
+				},
+				{
+					"name": "required",
+					"title": "Required",
+					"type": "bool",
+					"subType": "",
+					"default": "false",
+					"required": false,
+					"input": "checkbox",
+					"description": "Is field input required? Default: false"
+				},
+				{
+					"name": "format",
+					"title": "Format",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Currently used only with data types \"date\" and \"time\". Contains date or time format such as \"MM\/DD\/YYYY\" or \"hh:mm:ss\""
+				},
+				{
+					"name": "searchable",
+					"title": "Searchable",
+					"type": "bool",
+					"subType": "",
+					"default": "true",
+					"required": false,
+					"input": "checkbox",
+					"description": "Is field searchable? Default: true"
+				},
+				{
+					"name": "sortable",
+					"title": "Sortable",
+					"type": "bool",
+					"subType": "",
+					"default": "true",
+					"required": false,
+					"input": "checkbox",
+					"description": "Is field sortable? Default: true"
+				},
+				{
+					"name": "exportable",
+					"title": "Exportable",
+					"type": "bool",
+					"subType": "",
+					"default": "false",
+					"required": false,
+					"input": "checkbox",
+					"description": "If true field will be exported to CSV\/JSON (used in dataview component). Default: false"
+				},
+				{
+					"name": "input",
+					"title": "Input",
+					"type": "string",
+					"subType": "",
+					"default": "text",
+					"required": false,
+					"input": "select",
+					"choice_items": [
+						"text",
+						"password",
+						"datepicker",
+						"read-only",
+						"textarea",
+						"radio",
+						"checkbox",
+						"select",
+						"select-multiple",
+						"tags",
+						"crud",
+						"file",
+						"custom"
+					],
+					"description": "Form input control type: \"text\", \"password\", \"datepicker\", \"read-only\", \"textarea\", \"radio\", \"checkbox\", \"select\", \"crud\", \"file\", \"custom\""
+				},
+				{
+					"name": "input_template",
+					"title": "Input template",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Template for \"custom\" input field (relative to input file)"
+				},
+				{
+					"name": "input_template_code",
+					"title": "Input template code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Source code (markup) for \"custom\" input field. If you need any initialization (e.g. jQuery) here, you can put that into form's template_rendered_code"
+				},
+				{
+					"name": "input_group_class",
+					"title": "Input group class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "This CSS class will be added to field input group container in forms."
+				},
+				{
+					"name": "input_control_class",
+					"title": "Input control class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "This CSS class will be added to input control in forms."
+				},
+				{
+					"name": "input_items",
+					"title": "Input items",
+					"type": "array",
+					"subType": "input_item",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Item list for input type \"radio\" and \"select\""
+				},
+				{
+					"name": "lookup_query_name",
+					"title": "Lookup query name",
+					"type": "string",
+					"subType": "query_name",
+					"default": "",
+					"required": false,
+					"input": "select_query",
+					"description": "Query name used for form input type \"select\"."
+				},
+				{
+					"name": "lookup_query_params",
+					"title": "Lookup query params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Lookup query params"
+				},
+				{
+					"name": "lookup_key",
+					"title": "Lookup value field",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Field name from lookup_query used as option value in input type \"select\". Mandatory field if lookup_query is defined"
+				},
+				{
+					"name": "lookup_field",
+					"title": "Lookup title field",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Field name from lookup_query used as option title in input type \"select\". Mandatory field if lookup query is defined"
+				},
+				{
+					"name": "display_helper",
+					"title": "Display helper",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Helper name used to display value from this field (used in DataView, Forms etc.)"
+				},
+				{
+					"name": "array_item_type",
+					"title": "Array item type",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "select",
+					"choice_items": [
+						"",
+						"string",
+						"integer",
+						"float",
+						"date",
+						"time",
+						"bool",
+						"object",
+						"email"
+					],
+					"description": "If \"type\" is set to \"array\" then you can define array item type here. Format is the same as for \"type\" property."
+				},
+				{
+					"name": "crud_fields",
+					"title": "CRUD input fields",
+					"type": "array",
+					"subType": "field",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "If \"array_item_type\" is set to \"object\" then you can define fields for input type \"crud\"."
+				},
+				{
+					"name": "crud_insert_title",
+					"title": "CRUD insert title",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "For fields with \"input\": \"crud\" - insert button and insert form title"
+				},
+				{
+					"name": "file_collection",
+					"title": "File collection",
+					"type": "string",
+					"subType": "collection_name",
+					"default": "",
+					"required": false,
+					"input": "select_collection",
+					"description": "For fields with \"input\": \"file\". Name of FS.Collection where file is stored. Generator will automatically join this collection with file_collection."
+				},
+				{
+					"name": "file_container",
+					"title": "File container field",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "For fields with \"input\": \"file\". Field name where FS.File object from joined FS.Collection will be stored."
+				},
+				{
+					"name": "join_collection",
+					"title": "Join collection",
+					"type": "string",
+					"subType": "collection_name",
+					"default": "",
+					"required": false,
+					"input": "select_collection",
+					"description": "Collection name to join with. If set then this field acts as foreign key. For generic join don't set this field (see \"join_collection_field\" instead)."
+				},
+				{
+					"name": "join_collection_field",
+					"title": "Join collection field",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Used in generic joins only. Field name (from this collection) containing collection name to join with. If set then this field acts as foreign key."
+				},
+				{
+					"name": "join_container",
+					"title": "Join container field",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Field name where document from joined collection will be stored"
+				},
+				{
+					"name": "join_fields",
+					"title": "Join fields",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "Field list to fetch from joined collection. Ignored in generic joins."
+				},
+				{
+					"name": "show_in_dataview",
+					"title": "Show in dataviews",
+					"type": "bool",
+					"subType": "",
+					"default": "true",
+					"required": false,
+					"input": "checkbox",
+					"description": "If set to \"false\", field will not be shown in dataview components. Default: true"
+				},
+				{
+					"name": "show_in_insert_form",
+					"title": "Show in insert forms",
+					"type": "bool",
+					"subType": "",
+					"default": "true",
+					"required": false,
+					"input": "checkbox",
+					"description": "If set to \"false\", field will not be included in forms with mode \"insert\". Default: true"
+				},
+				{
+					"name": "show_in_update_form",
+					"title": "Show in update forms",
+					"type": "bool",
+					"subType": "",
+					"default": "true",
+					"required": false,
+					"input": "checkbox",
+					"description": "If set to \"false\", field will not be included in forms with mode \"update\". Default: true"
+				},
+				{
+					"name": "show_in_read_only_form",
+					"title": "Show in read-only forms",
+					"type": "bool",
+					"subType": "",
+					"default": "true",
+					"required": false,
+					"input": "checkbox",
+					"description": "If set to \"false\", field will not be included in forms with mode \"read_only\". Default: true"
+				},
+				{
+					"name": "role_in_blog",
+					"title": "Role in Blog",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "select",
+					"choice_items": [
+						"",
+						"title",
+						"subtitle",
+						"text",
+						"date"
+					],
+					"description": "Specify which role this field will have in dataview (\"view_style\": \"blog\"). Can be one of: \"title\", \"subtitle\", \"text\", \"date\"."
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "hidden_field",
+			"derivedFrom": [
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Field name"
+				},
+				{
+					"name": "value",
+					"title": "Value",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Field value"
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "input_item",
+			"derivedFrom": [
+			],
+			"members": [
+				{
+					"name": "value",
+					"title": "Value",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "select, radio or checkbox item value written on submit"
+				},
+				{
+					"name": "title",
+					"title": "Title",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "select, radio or checkbox item title shown to user"
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "collection",
+			"derivedFrom": [
+				"object"
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "object_name",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Object name"
+				},
+				{
+					"name": "type",
+					"title": "Type",
+					"type": "string",
+					"subType": "",
+					"default": "collection",
+					"required": true,
+					"input": "select",
+					"choice_items": [
+						"collection",
+						"file_collection",
+						"bigchaindb"
+					],
+					"description": "Collection type. Can be \"collection\", \"file_collection\" (FS.Collection) or \"bigchaindb\". Default: \"collection\"."
+				},
+				{
+					"name": "storage_adapters",
+					"title": "Storage adapters",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"choice_items": [
+						"gridfs",
+						"filesystem",
+						"s3",
+						"dropbox"
+					],
+					"description": "For collection of type \"file_collection\": list of CollectionFS storage adapters: \"gridfs\", \"filesystem\", \"s3\" or \"dropbox\". If not specified, generator will assume \"gridfs\"."
+				},
+				{
+					"name": "storage_adapter_options",
+					"title": "Storage adapter options",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "json",
+					"description": "For collection of type \"file_collection\": list of CollectionFS storage adapters and their options. Example: `{ \"s3\": { \"bucket\": \"mybucket\" }, \"gridfs\": { } }`."
+				},
+				{
+					"name": "fields",
+					"title": "Fields",
+					"type": "array",
+					"subType": "field",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Field list. Not mandatory, used by components such as form, dataview etc."
+				},
+				{
+					"name": "owner_field",
+					"title": "Owner field",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Field name used to store user ID of document owner. Only for apps using user accounts. Value of this field will be automatically set server side by \"before.insert\" hook."
+				},
+				{
+					"name": "roles_allowed_to_read",
+					"title": "Roles allowed to Read",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "List of user roles that can subscribe to this collection. You can use special roles \"nobody\" (nobody can read) and \"owner\" (only owner\/creator can read)."
+				},
+				{
+					"name": "roles_allowed_to_insert",
+					"title": "Roles allowed to Insert",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "List of user roles that can insert documents into this collection. You can use special role \"nobody\" (nobody can insert)."
+				},
+				{
+					"name": "roles_allowed_to_update",
+					"title": "Roles allowed to Update",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "List of user roles that can update documents. You can use special roles \"nobody\" (nobody can update) and \"owner\" (only owner\/creator can update)."
+				},
+				{
+					"name": "roles_allowed_to_delete",
+					"title": "Roles allowed to Delete",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "List of user roles that can delete documents. You can use special roles \"nobody\" (nobody can remove) and \"owner\" (only owner\/creator can remove)."
+				},
+				{
+					"name": "roles_allowed_to_download",
+					"title": "Roles allowed to Download",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "For collection of type \"file_collection\": List of user roles that can download files. You can use special roles \"nobody\" (nobody can download) and \"owner\" (only owner\/creator can download)."
+				},
+				{
+					"name": "update_rule",
+					"title": "Update rule",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Update will be restricted if this expression evaluates false. You can use two variables here: \"userId\" and \"doc\". Note that this expression is added ( AND ) to user role check, so if user's role is not allowed to update, evaluating this expression to true will not allow update."
+				},
+				{
+					"name": "delete_rule",
+					"title": "Delete rule",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Delete will be restricted if this expression evaluates false. You can use two variables here: \"userId\" and \"doc\". Note that this expression is added ( AND ) to user role check, so if user's role is not allowed to delete, evaluating this expression to true will not allow delete."
+				},
+				{
+					"name": "before_insert_code",
+					"title": "Before insert code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to be executed before new document is inserted into collection. Should be only body of a function with args: (userId, doc). See <a href=\"https:\/\/github.com\/matb33\/meteor-collection-hooks\" target=\"_blank\">meteor-collection-hooks<\/a> package for more details."
+				},
+				{
+					"name": "before_update_code",
+					"title": "Before update code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to be executed before document is updated. Should be only body of a function with args: (userId, doc, fieldNames, modifier, options)"
+				},
+				{
+					"name": "before_remove_code",
+					"title": "Before remove code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to be executed before document is removed. Should be only body of a function with args: (userId, doc)"
+				},
+				{
+					"name": "after_insert_code",
+					"title": "After insert code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to be executed after new document is inserted into collection. Should be only body of a function with args: (userId, doc). See <a href=\"https:\/\/github.com\/matb33\/meteor-collection-hooks\" target=\"_blank\">meteor-collection-hooks<\/a> package for more details."
+				},
+				{
+					"name": "after_update_code",
+					"title": "After update code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to be executed after document is updated. Should be only body of a function with args: (userId, doc, fieldNames, modifier, options)"
+				},
+				{
+					"name": "after_remove_code",
+					"title": "After remove code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to be executed after document is removed. Should be only body of a function with args: (userId, doc)"
+				},
+				{
+					"name": "before_insert_source_file",
+					"title": "Before insert source file",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "File that contains code to be executed before new document is inserted (relative to input JSON file). See \"before_insert_code\"."
+				},
+				{
+					"name": "before_update_source_file",
+					"title": "Before update source file",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "File that contains code to be executed before document is updated (relative to input JSON file). See \"before_update_code\"."
+				},
+				{
+					"name": "before_remove_source_file",
+					"title": "Before remove source file",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "File that contains code to be executed before document is removed (relative to input JSON file). See \"before_remove_code\"."
+				},
+				{
+					"name": "after_insert_source_file",
+					"title": "After insert source file",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "File that contains code to be executed after new document is inserted (relative to input JSON file). See \"after_insert_code\"."
+				},
+				{
+					"name": "after_update_source_file",
+					"title": "After update source file",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "File that contains code to be executed after document is updated (relative to input JSON file). See \"after_update_code\"."
+				},
+				{
+					"name": "after_remove_source_file",
+					"title": "After remove source file",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "File that contains code to be executed after document is removed (relative to input JSON file). See \"after_remove_code\"."
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "query",
+			"derivedFrom": [
+				"object"
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "object_name",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Object name"
+				},
+				{
+					"name": "collection",
+					"title": "Collection name",
+					"type": "string",
+					"subType": "collection_name",
+					"default": "",
+					"required": true,
+					"input": "select_collection",
+					"description": "Name of existing collection"
+				},
+				{
+					"name": "find_one",
+					"title": "FindOne",
+					"type": "bool",
+					"subType": "",
+					"default": "false",
+					"required": false,
+					"input": "checkbox",
+					"description": "If set to true query will return single document: findOne(). Default: false"
+				},
+				{
+					"name": "filter",
+					"title": "Filter",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "json",
+					"description": "Mongo query expression. Will be passed as first argument to find() or findOne(). Can contain route params in form \":paramName\". String \"Meteor.userId()\" is treated in special way: at the client it remains `Meteor.userId()` but at the server (in publication) it will be converted to `this.userId`."
+				},
+				{
+					"name": "options",
+					"title": "Options",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "json",
+					"description": "Options parameter passed as second argument to find() or findOne()."
+				},
+				{
+					"name": "related_queries",
+					"title": "Related queries",
+					"type": "array",
+					"subType": "subscription",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Page which subscribes to this query will also subscribe to related queries (for example: this is useful if you are using transform function that uses data from other collection)."
+				},
+				{
+					"name": "variables",
+					"title": "Variables",
+					"type": "array",
+					"subType": "variable",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Filter and Options object can contain variable (string value starting with \"%\" sign is treated as variable). You can specify value for each variable here (value can also be a function)."
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "subscription",
+			"derivedFrom": [
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Publication name",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Publication name (Query name)"
+				},
+				{
+					"name": "params",
+					"title": "Params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Params"
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "component",
+			"derivedFrom": [
+				"object"
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "object_name",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Object name"
+				},
+				{
+					"name": "type",
+					"title": "Type",
+					"type": "string",
+					"subType": "",
+					"default": "component",
+					"required": true,
+					"input": "text",
+					"description": "Component type name."
+				},
+				{
+					"name": "custom_template",
+					"title": "Custom template",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Custom html and js template filename (without extension). Path is relative to input JSON file."
+				},
+				{
+					"name": "imports",
+					"title": "Import modules",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "list of modules to import. Example: `import {X} from \"Y\";` (\"react\" applications only)"
+				},
+				{
+					"name": "dest_selector",
+					"title": "Dest. selector",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "destination html element selector. Similar to jQuery selector, but only three simple formats are supported: \"tagname\", \"#element_id\" and \".class_name\"."
+				},
+				{
+					"name": "dest_position",
+					"title": "Dest. position",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "select",
+					"choice_items": [
+						"",
+						"top",
+						"bottom",
+						"before",
+						"after"
+					],
+					"description": "destination position relative to destination element: \"top\", \"bottom\", \"before\" or \"after\". Default: \"bottom\""
+				},
+				{
+					"name": "class",
+					"title": "CSS class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "CSS class name to be added to component"
+				},
+				{
+					"name": "title",
+					"title": "Title",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Component title"
+				},
+				{
+					"name": "title_icon_class",
+					"title": "Title icon class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "If present, \"span\" with this class name will be added to title (if title is set)"
+				},
+				{
+					"name": "events_code",
+					"title": "Events",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Content of Template.TEMPLATE_NAME.events({ ... });"
+				},
+				{
+					"name": "helpers_code",
+					"title": "Helpers",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Content of Template.TEMPLATE_NAME.helpers({ ... });"
+				},
+				{
+					"name": "query_name",
+					"title": "Query name",
+					"type": "string",
+					"subType": "query_name",
+					"default": "",
+					"required": false,
+					"input": "select_query",
+					"description": "Query (publication) name from application.queries used as main data context. Page's router will subscribe to this publication automatically."
+				},
+				{
+					"name": "query_params",
+					"title": "Query params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Query (publication) params"
+				},
+				{
+					"name": "custom_data_code",
+					"title": "Custom Data Code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to execute just before data from database is returned (executes before iron-router `data` function returns or in React apps before `getMeteorData` returns). You can modify `data` variable here."
+				},
+				{
+					"name": "components",
+					"title": "Components",
+					"type": "array",
+					"subType": "component",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Component list"
+				},
+				{
+					"name": "template_created_code",
+					"title": "Template created code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to be executed when template is created (before it is rendered)"
+				},
+				{
+					"name": "template_rendered_code",
+					"title": "Template rendered code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to be executed when template is rendered"
+				},
+				{
+					"name": "template_destroyed_code",
+					"title": "Template destroyed code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to be executed before template is destroyed"
+				}
+			],
+			"hideDerivedClasses": [
+				"page"
+			],
+			"hideThis": true
+		},
+		{
+			"objectType": "param",
+			"derivedFrom": [
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Parameter name"
+				},
+				{
+					"name": "value",
+					"title": "Value",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Parameter value"
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "variable",
+			"derivedFrom": [
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Variable name"
+				},
+				{
+					"name": "value",
+					"title": "Value",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Variable value"
+				},
+				{
+					"name": "query_name",
+					"title": "Query name",
+					"type": "string",
+					"subType": "query_name",
+					"default": "",
+					"required": false,
+					"input": "select_query",
+					"description": "External query name. Set field name to \"Value\" field of this variable and result will be array of values from that field (pluck)"
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "action",
+			"derivedFrom": [
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Action name"
+				},
+				{
+					"name": "title",
+					"title": "Title",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Action title"
+				},
+				{
+					"name": "icon_class",
+					"title": "Icon class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Icon class"
+				},
+				{
+					"name": "route",
+					"title": "Route name",
+					"type": "string",
+					"subType": "route_name",
+					"default": "",
+					"required": false,
+					"input": "select_route",
+					"description": "Redirect to route"
+				},
+				{
+					"name": "route_params",
+					"title": "Route params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Parameters to be passed to \"route\""
+				},
+				{
+					"name": "action_code",
+					"title": "Action Code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Custom code to execute"
+				},
+				{
+					"name": "rule",
+					"title": "Rule",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "JavaScript expression. Action will be hidden in UI if expression evaluates false"
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "server_side_route",
+			"derivedFrom": [
+				"object"
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "object_name",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Object name"
+				},
+				{
+					"name": "route_params",
+					"title": "Route params",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "Route params to be passed via URL"
+				},
+				{
+					"name": "path",
+					"title": "Path",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Route path. Not mandatory: if ommited path is constructed from route name and route_params."
+				},
+				{
+					"name": "source_file",
+					"title": "Source file",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "path to external file containing route action code (relative to input JSON file)."
+				},
+				{
+					"name": "source_content",
+					"title": "Source content",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "path to external file containing route action code (relative to input JSON file)."
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "page",
+			"derivedFrom": [
+				"component"
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "object_name",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Object name"
+				},
+				{
+					"name": "type",
+					"title": "Type",
+					"type": "string",
+					"subType": "",
+					"default": "page",
+					"required": false,
+					"input": "static",
+					"description": "Component type name."
+				},
+				{
+					"name": "template",
+					"title": "Template",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "select",
+					"choice_items": [
+						"",
+						"page_empty",
+						"page_subcontent_sidenav",
+						"page_subcontent_sidenav_collapse",
+						"page_subcontent_tabnav",
+						"page_subcontent_tabnav_2col",
+						"page_subcontent_navbar",
+						"page_subcontent_navbar_top",
+						"change_pass",
+						"forgot_password",
+						"login",
+						"logout",
+						"register",
+						"reset_password",
+						"verify_email"
+					],
+					"description": "Built-in html and js template file name (without extension) contained in kitchen templates directory."
+				},
+				{
+					"name": "custom_template",
+					"title": "Custom template",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Custom html and js template filename (without extension). Path is relative to input JSON file."
+				},
+				{
+					"name": "html",
+					"title": "HTML code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "html",
+					"description": "Custom HTML code (for \"blaze\" applications only - ignored if \"react\" is used)"
+				},
+				{
+					"name": "js",
+					"title": "JS code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Custom JS code (for \"blaze\" applications only - ignored if \"react\" is used)"
+				},
+				{
+					"name": "jsx",
+					"title": "JSX code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Custom JSX code (for \"react\" applications only - ignored if \"blaze\" is used)"
+				},
+				{
+					"name": "gasoline",
+					"title": "Generic Template",
+					"type": "gasoline",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Input for gasoline-turbo (generates both blaze and react from the same input)"
+				},
+				{
+					"name": "use_gasoline",
+					"title": "Use visual designer",
+					"type": "bool",
+					"subType": "",
+					"default": "false",
+					"required": false,
+					"input": "checkbox",
+					"description": "If set to true, generator will ignore HTML, JS and JSX members, and will use gasoline-turbo to build template(s)"
+				},
+				{
+					"name": "imports",
+					"title": "Import modules",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "list of modules to import. Example: `import {X} from \"Y\";` (\"react\" applications only)"
+				},
+				{
+					"name": "class",
+					"title": "CSS class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "CSS class name to be added to component"
+				},
+				{
+					"name": "title",
+					"title": "Title",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Component title"
+				},
+				{
+					"name": "title_icon_class",
+					"title": "Title icon class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "If present, \"span\" with this class name will be added to title (if title is set)"
+				},
+				{
+					"name": "events_code",
+					"title": "Events",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Content of Template.TEMPLATE_NAME.events({ ... });"
+				},
+				{
+					"name": "helpers_code",
+					"title": "Helpers",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Content of Template.TEMPLATE_NAME.helpers({ ... });"
+				},
+				{
+					"name": "query_name",
+					"title": "Query name",
+					"type": "string",
+					"subType": "query_name",
+					"default": "",
+					"required": false,
+					"input": "select_query",
+					"description": "Query (publication) name from application.queries used as main data context. Page's router will subscribe to this publication automatically."
+				},
+				{
+					"name": "query_params",
+					"title": "Query params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Query (publication) params"
+				},
+				{
+					"name": "custom_data_code",
+					"title": "Custom Data Code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to execute just before data from database is returned (executes before iron-router `data` function returns or in React apps before `getMeteorData` returns). You can modify `data` variable here."
+				},
+				{
+					"name": "components",
+					"title": "Components",
+					"type": "array",
+					"subType": "component",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Component list"
+				},
+				{
+					"name": "template_created_code",
+					"title": "Template created code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to be executed when template is created (before it is rendered)"
+				},
+				{
+					"name": "template_rendered_code",
+					"title": "Template rendered code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to be executed when template is rendered"
+				},
+				{
+					"name": "template_destroyed_code",
+					"title": "Template destroyed code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to be executed before template is destroyed"
+				},
+				{
+					"name": "user_defined_template",
+					"title": "User defined template",
+					"type": "bool",
+					"subType": "",
+					"default": "false",
+					"required": false,
+					"input": "checkbox",
+					"description": "If set to true then built-in template will be ignored and \"html\", \"js\" and \"jsx\" properties will be used."
+				},
+				{
+					"name": "meta_description",
+					"title": "Meta Description",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Meta description"
+				},
+				{
+					"name": "meta_title",
+					"title": "Meta Title",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Head title tag and meta title"
+				},
+				{
+					"name": "text",
+					"title": "Text",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "textarea",
+					"description": "Text to be inserted into page"
+				},
+				{
+					"name": "background_image",
+					"title": "Background Image URL",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Background image URL"
+				},
+				{
+					"name": "container_class",
+					"title": "Container class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Class to be added to page container. Example: \"container-fluid\". Default \"container\"."
+				},
+				{
+					"name": "route_params",
+					"title": "Route params",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "Route params to be passed via URL"
+				},
+				{
+					"name": "close_route",
+					"title": "Close button route",
+					"type": "string",
+					"subType": "route_name",
+					"default": "",
+					"required": false,
+					"input": "select_route",
+					"description": "If specified, page will have close button routing to this route"
+				},
+				{
+					"name": "close_route_params",
+					"title": "Close button route params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Params to be passed to close_route"
+				},
+				{
+					"name": "back_route",
+					"title": "Back button route",
+					"type": "string",
+					"subType": "route_name",
+					"default": "",
+					"required": false,
+					"input": "select_route",
+					"description": "Route name of page to navigate on back button click. Mandatory field for back button to appear"
+				},
+				{
+					"name": "back_route_params",
+					"title": "Back button route params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Route params to be passed to \"back_route\""
+				},
+				{
+					"name": "roles",
+					"title": "Roles",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "User roles allowed to access this page"
+				},
+				{
+					"name": "pages",
+					"title": "Subpages",
+					"type": "array",
+					"subType": "page",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Subpages"
+				},
+				{
+					"name": "related_queries",
+					"title": "Related queries",
+					"type": "array",
+					"subType": "subscription",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "List of additional queries (publications) to subscribe"
+				},
+				{
+					"name": "force_yield_subpages",
+					"title": "Force yield subpages",
+					"type": "bool",
+					"subType": "",
+					"default": "false",
+					"required": false,
+					"input": "checkbox",
+					"description": "Deprecated. Please use \"render_subpages\" property instead."
+				},
+				{
+					"name": "render_subpages",
+					"title": "Render subpages",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "select",
+					"choice_items": [
+						"auto",
+						"never",
+						"always"
+					],
+					"description": "Should page render subpages in \"subcontent\" area? \"auto\" = only if page has menu pointing to subpages. \"never\" - never, \"always\" - always"
+				},
+				{
+					"name": "zoneless",
+					"title": "Zoneless",
+					"type": "bool",
+					"subType": "",
+					"default": "false",
+					"required": false,
+					"input": "checkbox",
+					"description": "Deprecated - will be removed soon. For applications with user account system: make this page visible for both authenticated and non-authenticated users"
+				},
+				{
+					"name": "parent_layout",
+					"title": "Parent layout",
+					"type": "bool",
+					"subType": "",
+					"default": "false",
+					"required": false,
+					"input": "checkbox",
+					"description": "If set to true parent page will be used as layoutTemplate. Default: false"
+				},
+				{
+					"name": "layout_template",
+					"title": "Layout template name",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Custom layout template name"
+				},
+				{
+					"name": "controller_before_action",
+					"title": "Controller onBeforeAction",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "code to execute inside route controller \"onBeforeAction\" hook"
+				},
+				{
+					"name": "controller_after_action",
+					"title": "Controller onAfterAction",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "code to execute inside route controller \"onBeforeAction\" hook"
+				}
+			],
+			"hideDerivedClasses": [
+				"zone"
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "zone",
+			"derivedFrom": [
+				"page"
+			],
+			"members": [
+				{
+					"name": "type",
+					"title": "Type",
+					"type": "string",
+					"subType": "",
+					"default": "zone",
+					"required": false,
+					"input": "static",
+					"description": "Component type name."
+				},
+				{
+					"name": "html",
+					"title": "HTML code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "html",
+					"description": "Custom HTML code (for \"blaze\" applications only - ignored if \"react\" is used)"
+				},
+				{
+					"name": "js",
+					"title": "JS code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Custom JS code (for \"blaze\" applications only - ignored if \"react\" is used)"
+				},
+				{
+					"name": "jsx",
+					"title": "JSX code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Custom JSX code (for \"react\" applications only - ignored if \"blaze\" is used)"
+				},
+				{
+					"name": "gasoline",
+					"title": "Generic Template",
+					"type": "gasoline",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Input for gasoline-turbo (generates both blaze and react from the same input)"
+				},
+				{
+					"name": "use_gasoline",
+					"title": "Use visual designer",
+					"type": "bool",
+					"subType": "",
+					"default": "false",
+					"required": false,
+					"input": "checkbox",
+					"description": "If set to true, generator will ignore HTML, JS and JSX members, and will use gasoline-turbo to build template(s)"
+				},
+				{
+					"name": "imports",
+					"title": "Import modules",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "list of modules to import. Example: `import {X} from \"Y\";` (\"react\" applications only)"
+				},
+				{
+					"name": "query_name",
+					"title": "Query name",
+					"type": "string",
+					"subType": "query_name",
+					"default": "",
+					"required": false,
+					"input": "select_query",
+					"description": "Query (publication) name from application.queries used as main data context. Page's router will subscribe to this publication automatically."
+				},
+				{
+					"name": "query_params",
+					"title": "Query params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Query (publication) params"
+				},
+				{
+					"name": "custom_data_code",
+					"title": "Custom Data Code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to execute just before data from database is returned (executes before iron-router `data` function returns or in React apps before `getMeteorData` returns). You can modify `data` variable here."
+				},
+				{
+					"name": "components",
+					"title": "Components",
+					"type": "array",
+					"subType": "component",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Component list"
+				},
+				{
+					"name": "user_defined_template",
+					"title": "User defined template",
+					"type": "bool",
+					"subType": "",
+					"default": "false",
+					"required": false,
+					"input": "checkbox",
+					"description": "If set to true then built-in template will be ignored and \"html\", \"js\" and \"jsx\" properties will be used."
+				},
+				{
+					"name": "background_image",
+					"title": "Background Image URL",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Background image URL"
+				},
+				{
+					"name": "container_class",
+					"title": "Container class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Class to be added to page container. Example: \"container-fluid\". Default \"container\"."
+				},
+				{
+					"name": "pages",
+					"title": "Subpages",
+					"type": "array",
+					"subType": "page",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Subpages"
+				},
+				{
+					"name": "related_queries",
+					"title": "Related queries",
+					"type": "array",
+					"subType": "subscription",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "List of additional queries (publications) to subscribe"
+				},
+				{
+					"name": "render_subpages",
+					"title": "Render subpages",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "select",
+					"choice_items": [
+						"auto",
+						"never",
+						"always"
+					],
+					"description": "Should page render subpages in \"subcontent\" area? \"auto\" = only if page has menu pointing to subpages. \"never\" - never, \"always\" - always"
+				},
+				{
+					"name": "layout_template",
+					"title": "Layout template name",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Custom layout template name"
+				},
+				{
+					"name": "layout",
+					"title": "Layout",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "select",
+					"choice_items": [
+						"",
+						"navbar",
+						"sidenav",
+						"landing",
+						"sticky_footer",
+						"empty"
+					],
+					"description": "Built-in layout template name: \"navbar\", \"sidenav\", \"sticky_footer\" or \"empty\". Default: \"navbar\""
+				},
+				{
+					"name": "default_route",
+					"title": "Default route",
+					"type": "string",
+					"subType": "route_name",
+					"default": "",
+					"required": false,
+					"input": "select_route",
+					"description": "\"home\" route for this zone."
+				},
+				{
+					"name": "navbar_class",
+					"title": "Navbar Class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "CSS class name to be added to navbar."
+				},
+				{
+					"name": "footer_class",
+					"title": "Footer Class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "CSS class name to be added to footer."
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "file_pair",
+			"derivedFrom": [
+			],
+			"members": [
+				{
+					"name": "source",
+					"title": "Source file",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Source file to copy. Can be path to local file relative to input JSON or URL (starts with \"http:\/\/\" or \"https:\/\/\")."
+				},
+				{
+					"name": "source_content",
+					"title": "Source content",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "textarea",
+					"description": "If source file is not specified, this content will be written into destination file."
+				},
+				{
+					"name": "dest",
+					"title": "Destination file",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Destination file. You can use directory aliases: OUTPUT_DIR, CLIENT_DIR, CLIENT_LIB_DIR, CLIENT_COMPONENTS_DIR, CLIENT_STYLES_DIR, CLIENT_STYLES_DEFAULT_DIR, CLIENT_STYLES_THEME_DIR, CLIENT_VIEWS_DIR, CLIENT_VIEWS_NOT_FOUND_DIR, CLIENT_VIEWS_LOADING_DIR, LIB_DIR, SETTINGS_DIR, BOTH_DIR, BOTH_LIB_DIR, BOTH_COLLECTIONS_DIR, PUBLIC_DIR, PUBLIC_IMAGES_DIR, PUBLIC_FONTS_DIR, PRIVATE_DIR, SERVER_DIR, SERVER_LIB_DIR, SERVER_COLLECTIONS_DIR, SERVER_PUBLISH_DIR, SERVER_ROUTER_DIR, SERVER_METHODS_DIR"
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "packages",
+			"derivedFrom": [
+			],
+			"members": [
+				{
+					"name": "meteor",
+					"title": "Meteor",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "List of meteor packages. Packages listed here will be added to your application."
+				},
+				{
+					"name": "npm",
+					"title": "NPM",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "List of npm packages."
+				},
+				{
+					"name": "mrt",
+					"title": "Meteorite",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "List of meteorite packages (deprecated)"
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "application",
+			"derivedFrom": [
+				"object"
+			],
+			"members": [
+				{
+					"name": "title",
+					"title": "Title",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Application title"
+				},
+				{
+					"name": "meta_description",
+					"title": "Meta Description",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Default meta_description for pages without meta_description"
+				},
+				{
+					"name": "meta_title",
+					"title": "Meta Title",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Default meta_title for pages without meta_title"
+				},
+				{
+					"name": "templating",
+					"title": "Templating framework",
+					"type": "string",
+					"subType": "",
+					"default": "blaze",
+					"required": false,
+					"input": "select",
+					"choice_items": [
+						"blaze",
+						"react"
+					],
+					"description": "\"blaze\" or \"react\". Default: \"blaze\". Note: \"react\" is not fully implemented yet."
+				},
+				{
+					"name": "frontend",
+					"title": "Frontend",
+					"type": "string",
+					"subType": "",
+					"default": "bootstrap3",
+					"required": false,
+					"input": "select",
+					"choice_items": [
+						"bootstrap3",
+						"semantic-ui",
+						"materialize",
+						"aframe"
+					],
+					"description": "\"bootstrap3\", \"semantic-ui\", \"materialize\" or \"aframe\". Default: \"bootstrap3\". \"materialize\" and \"aframe\" are not fully implemented yet. \"aframe\" works only with \"react\"."
+				},
+				{
+					"name": "theme",
+					"title": "Theme",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"choice_items": [
+						"bootswatch-amelia",
+						"bootswatch-cerulean",
+						"bootswatch-cosmo",
+						"bootswatch-cyborg",
+						"bootswatch-cyborg-darkly",
+						"bootswatch-darkly",
+						"bootswatch-flatly",
+						"bootswatch-journal",
+						"bootswatch-lumen",
+						"bootswatch-paper",
+						"bootswatch-readable",
+						"bootswatch-sandstone",
+						"bootswatch-simplex",
+						"bootswatch-slate",
+						"bootswatch-solar",
+						"bootswatch-spacelab",
+						"bootswatch-superhero",
+						"bootswatch-united",
+						"bootswatch-yeti",
+						"flat-ui"
+					],
+					"description": "Visual theme name. With \"bootstrap\" frontend theme can be \"flat-ui\" or one of bootswatch themes: \"bootswatch-amelia\", \"bootswatch-cerulean\", \"bootswatch-cosmo\", \"bootswatch-cyborg\", \"bootswatch-darkly\", \"bootswatch-flatly\", \"bootswatch-journal\", \"bootswatch-lumen\", \"bootswatch-paper\", \"bootswatch-readable\", \"bootswatch-sandstone\", \"bootswatch-simplex\", \"bootswatch-slate\", \"bootswatch-solar\", \"bootswatch-spacelab\", \"bootswatch-superhero\", \"bootswatch-united\", \"bootswatch-yeti\""
+				},
+				{
+					"name": "animate",
+					"title": "Animate",
+					"type": "bool",
+					"subType": "",
+					"default": "false",
+					"required": false,
+					"input": "checkbox",
+					"description": "If set to true, animate.css will be included and all elements with \"animated\" css class will be animated when they reach viewport (on scroll and on resize)"
+				},
+				{
+					"name": "footer_text",
+					"title": "Footer text",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Text to show in page footer"
+				},
+				{
+					"name": "roles",
+					"title": "User roles",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "List of user roles for applications with user account system. There are two predefined roles \"nobody\" and \"owner\" (see collection object for more info)."
+				},
+				{
+					"name": "default_role",
+					"title": "Default role for new users",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Default role for new users"
+				},
+				{
+					"name": "use_collection2",
+					"title": "Use Collection2",
+					"type": "bool",
+					"subType": "",
+					"default": "false",
+					"required": false,
+					"input": "checkbox",
+					"description": "Experimental feature. If set to true, schema will be generated and Collection2 package will be used for collections. Default: false"
+				},
+				{
+					"name": "collections",
+					"title": "Collections",
+					"type": "array",
+					"subType": "collection",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Mongo database collections"
+				},
+				{
+					"name": "queries",
+					"title": "Queries",
+					"type": "array",
+					"subType": "query",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "List of database queries (publications)."
+				},
+				{
+					"name": "free_zone",
+					"title": "Free zone",
+					"type": "zone",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Free zone (for application without user account system)"
+				},
+				{
+					"name": "public_zone",
+					"title": "Public zone",
+					"type": "zone",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Public zone (for app with user account system). Pages inside this zone are accessible only for non-authenticeted users."
+				},
+				{
+					"name": "private_zone",
+					"title": "Private zone",
+					"type": "zone",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Private zone (for app with user account system). Pages inside this zone are accessible only for authenticeted users."
+				},
+				{
+					"name": "login_with_password",
+					"title": "Login with password",
+					"type": "bool",
+					"subType": "",
+					"default": "true",
+					"required": false,
+					"input": "checkbox",
+					"description": "Allow login with password (for app with user account system only). Default: true"
+				},
+				{
+					"name": "send_verification_email",
+					"title": "Send verification e-mail",
+					"type": "bool",
+					"subType": "",
+					"default": "false",
+					"required": false,
+					"input": "checkbox",
+					"description": "After user account registration, e-mail with verification link will be sent to user. Default: false"
+				},
+				{
+					"name": "login_with_google",
+					"title": "Login with Google",
+					"type": "bool",
+					"subType": "",
+					"default": "false",
+					"required": false,
+					"input": "checkbox",
+					"description": "Allow OAuth login with google account (for app with user account system only). Default: false"
+				},
+				{
+					"name": "login_with_github",
+					"title": "Login with GitHub",
+					"type": "bool",
+					"subType": "",
+					"default": "false",
+					"required": false,
+					"input": "checkbox",
+					"description": "Allow OAuth login with github account (for app with user account system only). Default: false"
+				},
+				{
+					"name": "login_with_linkedin",
+					"title": "Login with LinkedIn",
+					"type": "bool",
+					"subType": "",
+					"default": "false",
+					"required": false,
+					"input": "checkbox",
+					"description": "Allow OAuth login with linkedin account (for app with user account system only). Default: false"
+				},
+				{
+					"name": "login_with_facebook",
+					"title": "Login with Facebook",
+					"type": "bool",
+					"subType": "",
+					"default": "false",
+					"required": false,
+					"input": "checkbox",
+					"description": "Allow OAuth login with facebook account (for app with user account system only). Default: false"
+				},
+				{
+					"name": "login_with_twitter",
+					"title": "Login with Twitter",
+					"type": "bool",
+					"subType": "",
+					"default": "false",
+					"required": false,
+					"input": "checkbox",
+					"description": "Allow OAuth login with twitter account (for app with user account system only). Default: false"
+				},
+				{
+					"name": "login_with_meteor",
+					"title": "Login with Meteor",
+					"type": "bool",
+					"subType": "",
+					"default": "false",
+					"required": false,
+					"input": "checkbox",
+					"description": "Allow OAuth login with meteor developer account (for app with user account system only). Default: false"
+				},
+				{
+					"name": "server_startup_code",
+					"title": "Server startup code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "javascript code to execute at server startup"
+				},
+				{
+					"name": "client_startup_code",
+					"title": "Client startup code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "javascript code to execute at client startup"
+				},
+				{
+					"name": "on_user_created_code",
+					"title": "On user created code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "javascript code to execute when new user is created (Accounts.onCreateUser)"
+				},
+				{
+					"name": "on_user_logged_code",
+					"title": "On user logged code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "javascript code to execute when user is logged in (Accounts.onLogin)"
+				},
+				{
+					"name": "global_on_rendered_code",
+					"title": "Global onRendered code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "javascript code to execute when any page is rendered"
+				},
+				{
+					"name": "server_startup_source_file",
+					"title": "Server startup source file",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "File that contains javascript code to execute at server startup (relative to input file)"
+				},
+				{
+					"name": "client_startup_source_file",
+					"title": "Client startup source file",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "File that contains javascript code to execute at client startup (relative to input file)"
+				},
+				{
+					"name": "on_user_created_source_file",
+					"title": "On user created source file",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "File that contains javascript code to execute when new user is created (relative to input file)"
+				},
+				{
+					"name": "on_user_logged_source_file",
+					"title": "On user logged source file",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "File that contains javascript code to execute when user is logged in (relative to input file)"
+				},
+				{
+					"name": "mobile_config",
+					"title": "mobile-config.js",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "If non-empty: will be written to mobile-config.js in app root"
+				},
+				{
+					"name": "stylesheet",
+					"title": "CSS/LESS stylesheet",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "css",
+					"description": "CSS\/LESS stylesheet. If non-empty, will be written to CLIENT_STYLES_DIR\/user_styles.less"
+				},
+				{
+					"name": "server_side_routes",
+					"title": "Server side routes",
+					"type": "array",
+					"subType": "server_side_route",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "List of server side routes."
+				},
+				{
+					"name": "copy_files",
+					"title": "Copy files",
+					"type": "array",
+					"subType": "file_pair",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "List of files to copy into destination directory. You can use directory aliases. See <a href=\"#file_pair\">file_pair<\/a> for more details."
+				},
+				{
+					"name": "packages",
+					"title": "Packages",
+					"type": "packages",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "List of additional meteor and meteorite packages that will be automatically added by generator"
+				},
+				{
+					"name": "router_config",
+					"title": "Router configuration",
+					"type": "object",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "json",
+					"description": "Optional parameter passed to Router.config()"
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "custom_component",
+			"derivedFrom": [
+				"component"
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "object_name",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Object name"
+				},
+				{
+					"name": "type",
+					"title": "Type",
+					"type": "string",
+					"subType": "",
+					"default": "custom_component",
+					"required": false,
+					"input": "static",
+					"description": "Component type name."
+				},
+				{
+					"name": "custom_template",
+					"title": "Custom template",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Custom html and js template filename (without extension). Path is relative to input JSON file."
+				},
+				{
+					"name": "html",
+					"title": "HTML code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "html",
+					"description": "Custom HTML code (for \"blaze\" applications only - ignored if \"react\" is used)"
+				},
+				{
+					"name": "js",
+					"title": "JS code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Custom JS code (for \"blaze\" applications only - ignored if \"react\" is used)"
+				},
+				{
+					"name": "jsx",
+					"title": "JSX code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Custom JSX code (for \"react\" applications only - ignored if \"blaze\" is used)"
+				},
+				{
+					"name": "gasoline",
+					"title": "Generic Template",
+					"type": "gasoline",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Input for gasoline-turbo (generates both blaze and react from the same input)"
+				},
+				{
+					"name": "use_gasoline",
+					"title": "Use visual designer",
+					"type": "bool",
+					"subType": "",
+					"default": "false",
+					"required": false,
+					"input": "checkbox",
+					"description": "If set to true, generator will ignore HTML, JS and JSX members, and will use gasoline-turbo to build template(s)"
+				},
+				{
+					"name": "imports",
+					"title": "Import modules",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "list of modules to import. Example: `import {X} from \"Y\";` (\"react\" applications only)"
+				},
+				{
+					"name": "dest_selector",
+					"title": "Dest. selector",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "destination html element selector. Similar to jQuery selector, but only three simple formats are supported: \"tagname\", \"#element_id\" and \".class_name\"."
+				},
+				{
+					"name": "dest_position",
+					"title": "Dest. position",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "select",
+					"choice_items": [
+						"",
+						"top",
+						"bottom",
+						"before",
+						"after"
+					],
+					"description": "destination position relative to destination element: \"top\", \"bottom\", \"before\" or \"after\". Default: \"bottom\""
+				},
+				{
+					"name": "query_name",
+					"title": "Query name",
+					"type": "string",
+					"subType": "query_name",
+					"default": "",
+					"required": false,
+					"input": "select_query",
+					"description": "Query (publication) name from application.queries used as main data context. Page's router will subscribe to this publication automatically."
+				},
+				{
+					"name": "query_params",
+					"title": "Query params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Query (publication) params"
+				},
+				{
+					"name": "custom_data_code",
+					"title": "Custom Data Code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to execute just before data from database is returned (executes before iron-router `data` function returns or in React apps before `getMeteorData` returns). You can modify `data` variable here."
+				},
+				{
+					"name": "components",
+					"title": "Components",
+					"type": "array",
+					"subType": "component",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Component list"
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "menu_item",
+			"derivedFrom": [
+				"object"
+			],
+			"members": [
+				{
+					"name": "title",
+					"title": "Title",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Item title as appears in menu"
+				},
+				{
+					"name": "route",
+					"title": "Route",
+					"type": "string",
+					"subType": "route_name",
+					"default": "",
+					"required": false,
+					"input": "select_route",
+					"description": "Route name of destination page"
+				},
+				{
+					"name": "route_params",
+					"title": "Route params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Parameters to be passed to \"route\""
+				},
+				{
+					"name": "url",
+					"title": "URL",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "URL (for external links. You can use only one of \"route\" or \"url\" properties, not both)"
+				},
+				{
+					"name": "target",
+					"title": "Set HTML target attr value",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Anchor \"target\" attribute value e.g. \"_blank\""
+				},
+				{
+					"name": "class",
+					"title": "Class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "CSS class name to be added to item `li` element"
+				},
+				{
+					"name": "items_container_class",
+					"title": "Items container class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "CSS class for div containing subitems."
+				},
+				{
+					"name": "icon_class",
+					"title": "Icon class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "If present, generator will add `span` into menu item and assign this CSS class to it"
+				},
+				{
+					"name": "items",
+					"title": "Sub items",
+					"type": "array",
+					"subType": "menu_item",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Subitems"
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "menu",
+			"derivedFrom": [
+				"component"
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "object_name",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Object name"
+				},
+				{
+					"name": "type",
+					"title": "Type",
+					"type": "string",
+					"subType": "",
+					"default": "menu",
+					"required": false,
+					"input": "static",
+					"description": "Component type name."
+				},
+				{
+					"name": "template",
+					"title": "Template",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "select",
+					"choice_items": [
+						"menu",
+						"menu_buttons"
+					],
+					"description": "Built-in html and js template file name (without extension) contained in kitchen templates directory."
+				},
+				{
+					"name": "imports",
+					"title": "Import modules",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "list of modules to import. Example: `import {X} from \"Y\";` (\"react\" applications only)"
+				},
+				{
+					"name": "dest_selector",
+					"title": "Dest. selector",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "destination html element selector. Similar to jQuery selector, but only three simple formats are supported: \"tagname\", \"#element_id\" and \".class_name\"."
+				},
+				{
+					"name": "dest_position",
+					"title": "Dest. position",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "select",
+					"choice_items": [
+						"",
+						"top",
+						"bottom",
+						"before",
+						"after"
+					],
+					"description": "destination position relative to destination element: \"top\", \"bottom\", \"before\" or \"after\". Default: \"bottom\""
+				},
+				{
+					"name": "class",
+					"title": "CSS class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "CSS class name to be added to component"
+				},
+				{
+					"name": "title",
+					"title": "Title",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Component title"
+				},
+				{
+					"name": "title_icon_class",
+					"title": "Title icon class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "If present, \"span\" with this class name will be added to title (if title is set)"
+				},
+				{
+					"name": "events_code",
+					"title": "Events",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Content of Template.TEMPLATE_NAME.events({ ... });"
+				},
+				{
+					"name": "helpers_code",
+					"title": "Helpers",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Content of Template.TEMPLATE_NAME.helpers({ ... });"
+				},
+				{
+					"name": "query_name",
+					"title": "Query name",
+					"type": "string",
+					"subType": "query_name",
+					"default": "",
+					"required": false,
+					"input": "select_query",
+					"description": "Query (publication) name from application.queries used as main data context. Page's router will subscribe to this publication automatically."
+				},
+				{
+					"name": "query_params",
+					"title": "Query params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Query (publication) params"
+				},
+				{
+					"name": "custom_data_code",
+					"title": "Custom Data Code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to execute just before data from database is returned (executes before iron-router `data` function returns or in React apps before `getMeteorData` returns). You can modify `data` variable here."
+				},
+				{
+					"name": "components",
+					"title": "Components",
+					"type": "array",
+					"subType": "component",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Component list"
+				},
+				{
+					"name": "template_created_code",
+					"title": "Template created code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to be executed when template is created (before it is rendered)"
+				},
+				{
+					"name": "template_rendered_code",
+					"title": "Template rendered code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to be executed when template is rendered"
+				},
+				{
+					"name": "template_destroyed_code",
+					"title": "Template destroyed code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to be executed before template is destroyed"
+				},
+				{
+					"name": "items",
+					"title": "Sub items",
+					"type": "array",
+					"subType": "menu_item",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Menu items."
+				},
+				{
+					"name": "items_container_class",
+					"title": "Items container class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "CSS class for div containing menu items."
+				},
+				{
+					"name": "scroll_spy_selector",
+					"title": "ScrollSpy selector",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "\"scrollspy\" selector for menus with anchor links, usually \"body\"."
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "jumbotron",
+			"derivedFrom": [
+				"component"
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "object_name",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Object name"
+				},
+				{
+					"name": "type",
+					"title": "Type",
+					"type": "string",
+					"subType": "",
+					"default": "jumbotron",
+					"required": false,
+					"input": "static",
+					"description": "Component type name."
+				},
+				{
+					"name": "imports",
+					"title": "Import modules",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "list of modules to import. Example: `import {X} from \"Y\";` (\"react\" applications only)"
+				},
+				{
+					"name": "dest_selector",
+					"title": "Dest. selector",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "destination html element selector. Similar to jQuery selector, but only three simple formats are supported: \"tagname\", \"#element_id\" and \".class_name\"."
+				},
+				{
+					"name": "dest_position",
+					"title": "Dest. position",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "select",
+					"choice_items": [
+						"",
+						"top",
+						"bottom",
+						"before",
+						"after"
+					],
+					"description": "destination position relative to destination element: \"top\", \"bottom\", \"before\" or \"after\". Default: \"bottom\""
+				},
+				{
+					"name": "class",
+					"title": "CSS class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "CSS class name to be added to component"
+				},
+				{
+					"name": "title",
+					"title": "Title",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Component title"
+				},
+				{
+					"name": "title_icon_class",
+					"title": "Title icon class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "If present, \"span\" with this class name will be added to title (if title is set)"
+				},
+				{
+					"name": "events_code",
+					"title": "Events",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Content of Template.TEMPLATE_NAME.events({ ... });"
+				},
+				{
+					"name": "helpers_code",
+					"title": "Helpers",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Content of Template.TEMPLATE_NAME.helpers({ ... });"
+				},
+				{
+					"name": "query_name",
+					"title": "Query name",
+					"type": "string",
+					"subType": "query_name",
+					"default": "",
+					"required": false,
+					"input": "select_query",
+					"description": "Query (publication) name from application.queries used as main data context. Page's router will subscribe to this publication automatically."
+				},
+				{
+					"name": "query_params",
+					"title": "Query params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Query (publication) params"
+				},
+				{
+					"name": "custom_data_code",
+					"title": "Custom Data Code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to execute just before data from database is returned (executes before iron-router `data` function returns or in React apps before `getMeteorData` returns). You can modify `data` variable here."
+				},
+				{
+					"name": "components",
+					"title": "Components",
+					"type": "array",
+					"subType": "component",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Component list"
+				},
+				{
+					"name": "template_created_code",
+					"title": "Template created code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to be executed when template is created (before it is rendered)"
+				},
+				{
+					"name": "template_rendered_code",
+					"title": "Template rendered code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to be executed when template is rendered"
+				},
+				{
+					"name": "template_destroyed_code",
+					"title": "Template destroyed code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to be executed before template is destroyed"
+				},
+				{
+					"name": "text",
+					"title": "Text",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "textarea",
+					"description": "Text to be shown in jumbotron"
+				},
+				{
+					"name": "image_url",
+					"title": "Image URL",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Background image URL"
+				},
+				{
+					"name": "button_title",
+					"title": "Button title",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Jumbotron button title"
+				},
+				{
+					"name": "button_route",
+					"title": "Button route",
+					"type": "string",
+					"subType": "route_name",
+					"default": "",
+					"required": false,
+					"input": "select_route",
+					"description": "Destination route name"
+				},
+				{
+					"name": "button_route_params",
+					"title": "Button route params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Parameters to be passed to destination route"
+				},
+				{
+					"name": "button_class",
+					"title": "Button CSS class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "CSS class to be added to jumbotron button"
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "form",
+			"derivedFrom": [
+				"component"
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "object_name",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Object name"
+				},
+				{
+					"name": "type",
+					"title": "Type",
+					"type": "string",
+					"subType": "",
+					"default": "form",
+					"required": false,
+					"input": "static",
+					"description": "Component type name."
+				},
+				{
+					"name": "imports",
+					"title": "Import modules",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "list of modules to import. Example: `import {X} from \"Y\";` (\"react\" applications only)"
+				},
+				{
+					"name": "dest_selector",
+					"title": "Dest. selector",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "destination html element selector. Similar to jQuery selector, but only three simple formats are supported: \"tagname\", \"#element_id\" and \".class_name\"."
+				},
+				{
+					"name": "dest_position",
+					"title": "Dest. position",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "select",
+					"choice_items": [
+						"",
+						"top",
+						"bottom",
+						"before",
+						"after"
+					],
+					"description": "destination position relative to destination element: \"top\", \"bottom\", \"before\" or \"after\". Default: \"bottom\""
+				},
+				{
+					"name": "class",
+					"title": "CSS class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "CSS class name to be added to component"
+				},
+				{
+					"name": "title",
+					"title": "Title",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Component title"
+				},
+				{
+					"name": "title_icon_class",
+					"title": "Title icon class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "If present, \"span\" with this class name will be added to title (if title is set)"
+				},
+				{
+					"name": "events_code",
+					"title": "Events",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Content of Template.TEMPLATE_NAME.events({ ... });"
+				},
+				{
+					"name": "helpers_code",
+					"title": "Helpers",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Content of Template.TEMPLATE_NAME.helpers({ ... });"
+				},
+				{
+					"name": "query_name",
+					"title": "Query name",
+					"type": "string",
+					"subType": "query_name",
+					"default": "",
+					"required": false,
+					"input": "select_query",
+					"description": "Query (publication) name from application.queries used as main data context. Page's router will subscribe to this publication automatically."
+				},
+				{
+					"name": "query_params",
+					"title": "Query params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Query (publication) params"
+				},
+				{
+					"name": "custom_data_code",
+					"title": "Custom Data Code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to execute just before data from database is returned (executes before iron-router `data` function returns or in React apps before `getMeteorData` returns). You can modify `data` variable here."
+				},
+				{
+					"name": "components",
+					"title": "Components",
+					"type": "array",
+					"subType": "component",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Component list"
+				},
+				{
+					"name": "template_created_code",
+					"title": "Template created code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to be executed when template is created (before it is rendered)"
+				},
+				{
+					"name": "template_rendered_code",
+					"title": "Template rendered code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to be executed when template is rendered"
+				},
+				{
+					"name": "template_destroyed_code",
+					"title": "Template destroyed code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to be executed before template is destroyed"
+				},
+				{
+					"name": "mode",
+					"title": "Mode",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": true,
+					"input": "select",
+					"choice_items": [
+						"insert",
+						"update",
+						"read_only"
+					],
+					"description": "\"insert\", \"update\" or \"read_only\""
+				},
+				{
+					"name": "layout",
+					"title": "Form layout",
+					"type": "string",
+					"subType": "",
+					"default": "default",
+					"required": false,
+					"input": "select",
+					"choice_items": [
+						"default",
+						"horizontal",
+						"inline"
+					],
+					"description": "\"default\", \"horizontal\" or \"inline\""
+				},
+				{
+					"name": "autofocus",
+					"title": "Autofocus",
+					"type": "bool",
+					"subType": "",
+					"default": "true",
+					"required": false,
+					"input": "checkbox",
+					"description": "If set to true, first focusable input element will have \"autofocus\" attribute set"
+				},
+				{
+					"name": "submit_route",
+					"title": "Submit route",
+					"type": "string",
+					"subType": "route_name",
+					"default": "",
+					"required": false,
+					"input": "select_route",
+					"description": "Route name of page to navigate after successfull submit. Mandatory field for submit button to appear"
+				},
+				{
+					"name": "cancel_route",
+					"title": "Cancel route",
+					"type": "string",
+					"subType": "route_name",
+					"default": "",
+					"required": false,
+					"input": "select_route",
+					"description": "Route name of page to navigate on form cancelation. Mandatory field for cancel button to appear"
+				},
+				{
+					"name": "close_route",
+					"title": "Close route",
+					"type": "string",
+					"subType": "route_name",
+					"default": "",
+					"required": false,
+					"input": "select_route",
+					"description": "Route name of page to navigate when user clicks \"OK\" button in \"read_only\" form. Mandatory field for close button to appear"
+				},
+				{
+					"name": "back_route",
+					"title": "Back route",
+					"type": "string",
+					"subType": "route_name",
+					"default": "",
+					"required": false,
+					"input": "select_route",
+					"description": "Route name of page to navigate on form back button. Mandatory field for back button to appear"
+				},
+				{
+					"name": "submit_code",
+					"title": "Submit code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Custom code to execute on form submit"
+				},
+				{
+					"name": "cancel_code",
+					"title": "Cancel code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Custom code to execute on form cancel"
+				},
+				{
+					"name": "submit_button_title",
+					"title": "Submit button title",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Text to show in submit button, default \"Save\""
+				},
+				{
+					"name": "cancel_button_title",
+					"title": "Cancel button title",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Text to show in cancel button, default \"Cancel\""
+				},
+				{
+					"name": "close_button_title",
+					"title": "Close button title",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Text to show in close button, default \"OK\""
+				},
+				{
+					"name": "submit_route_params",
+					"title": "Submit route params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Route params to be passed to \"submit_route\""
+				},
+				{
+					"name": "cancel_route_params",
+					"title": "Cancel route params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Route params to be passed to \"cancel_route\""
+				},
+				{
+					"name": "close_route_params",
+					"title": "Close route params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Route params to be passed to \"close_route\""
+				},
+				{
+					"name": "back_route_params",
+					"title": "Back route params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Route params to be passed to \"back_route\""
+				},
+				{
+					"name": "fields",
+					"title": "Fields",
+					"type": "array",
+					"subType": "field",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Defainition of form fields. If empty, generator will use fields defined at collection level."
+				},
+				{
+					"name": "hidden_fields",
+					"title": "Hidden fields",
+					"type": "array",
+					"subType": "hidden_field",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Fields (not shown in a form) that will be automatically written on submit."
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "data_view",
+			"derivedFrom": [
+				"component"
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "object_name",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Object name"
+				},
+				{
+					"name": "type",
+					"title": "Type",
+					"type": "string",
+					"subType": "",
+					"default": "data_view",
+					"required": false,
+					"input": "static",
+					"description": "Component type name."
+				},
+				{
+					"name": "imports",
+					"title": "Import modules",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "list of modules to import. Example: `import {X} from \"Y\";` (\"react\" applications only)"
+				},
+				{
+					"name": "dest_selector",
+					"title": "Dest. selector",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "destination html element selector. Similar to jQuery selector, but only three simple formats are supported: \"tagname\", \"#element_id\" and \".class_name\"."
+				},
+				{
+					"name": "dest_position",
+					"title": "Dest. position",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "select",
+					"choice_items": [
+						"",
+						"top",
+						"bottom",
+						"before",
+						"after"
+					],
+					"description": "destination position relative to destination element: \"top\", \"bottom\", \"before\" or \"after\". Default: \"bottom\""
+				},
+				{
+					"name": "class",
+					"title": "CSS class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "CSS class name to be added to component"
+				},
+				{
+					"name": "title",
+					"title": "Title",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Component title"
+				},
+				{
+					"name": "title_icon_class",
+					"title": "Title icon class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "If present, \"span\" with this class name will be added to title (if title is set)"
+				},
+				{
+					"name": "events_code",
+					"title": "Events",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Content of Template.TEMPLATE_NAME.events({ ... });"
+				},
+				{
+					"name": "helpers_code",
+					"title": "Helpers",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Content of Template.TEMPLATE_NAME.helpers({ ... });"
+				},
+				{
+					"name": "query_name",
+					"title": "Query name",
+					"type": "string",
+					"subType": "query_name",
+					"default": "",
+					"required": false,
+					"input": "select_query",
+					"description": "Query (publication) name from application.queries used as main data context. Page's router will subscribe to this publication automatically."
+				},
+				{
+					"name": "query_params",
+					"title": "Query params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Query (publication) params"
+				},
+				{
+					"name": "custom_data_code",
+					"title": "Custom Data Code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to execute just before data from database is returned (executes before iron-router `data` function returns or in React apps before `getMeteorData` returns). You can modify `data` variable here."
+				},
+				{
+					"name": "components",
+					"title": "Components",
+					"type": "array",
+					"subType": "component",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Component list"
+				},
+				{
+					"name": "template_created_code",
+					"title": "Template created code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to be executed when template is created (before it is rendered)"
+				},
+				{
+					"name": "template_rendered_code",
+					"title": "Template rendered code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to be executed when template is rendered"
+				},
+				{
+					"name": "template_destroyed_code",
+					"title": "Template destroyed code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to be executed before template is destroyed"
+				},
+				{
+					"name": "text_if_empty",
+					"title": "Text if empty",
+					"type": "string",
+					"subType": "",
+					"default": "No data here",
+					"required": false,
+					"input": "text",
+					"description": "Text to show if collection is empty."
+				},
+				{
+					"name": "text_if_not_found",
+					"title": "Text if not found",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Text to show if search string is not found."
+				},
+				{
+					"name": "delete_confirmation_message",
+					"title": "Delete confirmation message",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Text to show in delete confirmation box."
+				},
+				{
+					"name": "insert_route",
+					"title": "Insert route",
+					"type": "string",
+					"subType": "route_name",
+					"default": "",
+					"required": false,
+					"input": "select_route",
+					"description": "Route name of page containing insert form"
+				},
+				{
+					"name": "details_route",
+					"title": "Details route",
+					"type": "string",
+					"subType": "route_name",
+					"default": "",
+					"required": false,
+					"input": "select_route",
+					"description": "Route name of page showing selected item details (usually page containing form of type \"read_only\")."
+				},
+				{
+					"name": "edit_route",
+					"title": "Edit route",
+					"type": "string",
+					"subType": "route_name",
+					"default": "",
+					"required": false,
+					"input": "select_route",
+					"description": "Route name of page containing edit form. Makes edit_route_params field mandatory in most cases to be functional."
+				},
+				{
+					"name": "delete_route",
+					"title": "Delete route",
+					"type": "string",
+					"subType": "route_name",
+					"default": "",
+					"required": false,
+					"input": "select_route",
+					"description": "Route name to execute when user clicks \"delete\". Not mandatory - generator will automatically produce code for delete operation."
+				},
+				{
+					"name": "insert_route_params",
+					"title": "Insert route params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Parameters to be passed to \"insert_route\""
+				},
+				{
+					"name": "details_route_params",
+					"title": "Details route params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Parameters to be passed to \"details_route\""
+				},
+				{
+					"name": "edit_route_params",
+					"title": "Edit route params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Parameters to be passed to \"edit_route\""
+				},
+				{
+					"name": "delete_route_params",
+					"title": "Delete route params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Parameters to be passed to \"delete_route\""
+				},
+				{
+					"name": "item_actions",
+					"title": "Custom Item Actions",
+					"type": "array",
+					"subType": "action",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Custom item actions (method call and\/or redirect to route)"
+				},
+				{
+					"name": "insert_button_title",
+					"title": "Insert button title",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Insert button title"
+				},
+				{
+					"name": "on_item_clicked_code",
+					"title": "OnItemClicked code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to execute when item is clicked (before redirect if DetailsRoute is specified)"
+				},
+				{
+					"name": "views",
+					"title": "View styles",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"choice_items": [
+						"table",
+						"blog",
+						"list",
+						"cards"
+					],
+					"description": "View styles: \"table\", \"list\" or \"cards\". Default: \"table\"."
+				},
+				{
+					"name": "fields",
+					"title": "Fields",
+					"type": "array",
+					"subType": "field",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Defainition of table columns. If empty, generator will use fields defined at collection level."
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "tree_view",
+			"derivedFrom": [
+				"component"
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "object_name",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Object name"
+				},
+				{
+					"name": "type",
+					"title": "Type",
+					"type": "string",
+					"subType": "",
+					"default": "tree_view",
+					"required": false,
+					"input": "static",
+					"description": "Component type name."
+				},
+				{
+					"name": "imports",
+					"title": "Import modules",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "list of modules to import. Example: `import {X} from \"Y\";` (\"react\" applications only)"
+				},
+				{
+					"name": "dest_selector",
+					"title": "Dest. selector",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "destination html element selector. Similar to jQuery selector, but only three simple formats are supported: \"tagname\", \"#element_id\" and \".class_name\"."
+				},
+				{
+					"name": "dest_position",
+					"title": "Dest. position",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "select",
+					"choice_items": [
+						"",
+						"top",
+						"bottom",
+						"before",
+						"after"
+					],
+					"description": "destination position relative to destination element: \"top\", \"bottom\", \"before\" or \"after\". Default: \"bottom\""
+				},
+				{
+					"name": "class",
+					"title": "CSS class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "CSS class name to be added to component"
+				},
+				{
+					"name": "title",
+					"title": "Title",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Component title"
+				},
+				{
+					"name": "title_icon_class",
+					"title": "Title icon class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "If present, \"span\" with this class name will be added to title (if title is set)"
+				},
+				{
+					"name": "events_code",
+					"title": "Events",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Content of Template.TEMPLATE_NAME.events({ ... });"
+				},
+				{
+					"name": "helpers_code",
+					"title": "Helpers",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Content of Template.TEMPLATE_NAME.helpers({ ... });"
+				},
+				{
+					"name": "query_name",
+					"title": "Query name",
+					"type": "string",
+					"subType": "query_name",
+					"default": "",
+					"required": false,
+					"input": "select_query",
+					"description": "Query (publication) name from application.queries used as main data context. Page's router will subscribe to this publication automatically."
+				},
+				{
+					"name": "query_params",
+					"title": "Query params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Query (publication) params"
+				},
+				{
+					"name": "custom_data_code",
+					"title": "Custom Data Code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to execute just before data from database is returned (executes before iron-router `data` function returns or in React apps before `getMeteorData` returns). You can modify `data` variable here."
+				},
+				{
+					"name": "components",
+					"title": "Components",
+					"type": "array",
+					"subType": "component",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Component list"
+				},
+				{
+					"name": "template_created_code",
+					"title": "Template created code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to be executed when template is created (before it is rendered)"
+				},
+				{
+					"name": "template_rendered_code",
+					"title": "Template rendered code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to be executed when template is rendered"
+				},
+				{
+					"name": "template_destroyed_code",
+					"title": "Template destroyed code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to be executed before template is destroyed"
+				},
+				{
+					"name": "item_name_field",
+					"title": "Item name field",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Collection field shown as folder and item title"
+				},
+				{
+					"name": "item_type_field",
+					"title": "Item type field",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Collection field that stores item type. Can be \"dir\" or \"item\"."
+				},
+				{
+					"name": "collapsed_icon_class",
+					"title": "Collapsed icon class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "CSS class for collapsed folder icon. Default: \"fa fa-caret-right\""
+				},
+				{
+					"name": "expanded_icon_class",
+					"title": "Expanded icon class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "CSS class for expanded folder icon. Default: \"fa fa-caret-down\""
+				},
+				{
+					"name": "item_route",
+					"title": "Item route",
+					"type": "string",
+					"subType": "route_name",
+					"default": "",
+					"required": false,
+					"input": "select_route",
+					"description": "Navigate to this route when item is clicked"
+				},
+				{
+					"name": "item_route_params",
+					"title": "Item route params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Parameters to be passed to \"item_route\""
+				},
+				{
+					"name": "folder_route",
+					"title": "Folder route",
+					"type": "string",
+					"subType": "route_name",
+					"default": "",
+					"required": false,
+					"input": "select_route",
+					"description": "Navigate to this route when folder is clicked"
+				},
+				{
+					"name": "folder_route_params",
+					"title": "Folder route params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Parameters to be passed to \"folder_route\""
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "markdown",
+			"derivedFrom": [
+				"component"
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "object_name",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Object name"
+				},
+				{
+					"name": "type",
+					"title": "Type",
+					"type": "string",
+					"subType": "",
+					"default": "markdown",
+					"required": false,
+					"input": "static",
+					"description": "Component type name."
+				},
+				{
+					"name": "imports",
+					"title": "Import modules",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "list of modules to import. Example: `import {X} from \"Y\";` (\"react\" applications only)"
+				},
+				{
+					"name": "dest_selector",
+					"title": "Dest. selector",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "destination html element selector. Similar to jQuery selector, but only three simple formats are supported: \"tagname\", \"#element_id\" and \".class_name\"."
+				},
+				{
+					"name": "dest_position",
+					"title": "Dest. position",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "select",
+					"choice_items": [
+						"",
+						"top",
+						"bottom",
+						"before",
+						"after"
+					],
+					"description": "destination position relative to destination element: \"top\", \"bottom\", \"before\" or \"after\". Default: \"bottom\""
+				},
+				{
+					"name": "query_name",
+					"title": "Query name",
+					"type": "string",
+					"subType": "query_name",
+					"default": "",
+					"required": false,
+					"input": "select_query",
+					"description": "Query (publication) name from application.queries used as main data context. Page's router will subscribe to this publication automatically."
+				},
+				{
+					"name": "query_params",
+					"title": "Query params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Query (publication) params"
+				},
+				{
+					"name": "custom_data_code",
+					"title": "Custom Data Code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to execute just before data from database is returned (executes before iron-router `data` function returns or in React apps before `getMeteorData` returns). You can modify `data` variable here."
+				},
+				{
+					"name": "components",
+					"title": "Components",
+					"type": "array",
+					"subType": "component",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Component list"
+				},
+				{
+					"name": "source",
+					"title": "Source",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "markdown",
+					"description": "Markdown here"
+				},
+				{
+					"name": "source_file",
+					"title": "Markdown source file",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "Path to file containing markdown (relative to input file)"
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "div",
+			"derivedFrom": [
+				"component"
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "object_name",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Object name"
+				},
+				{
+					"name": "type",
+					"title": "Type",
+					"type": "string",
+					"subType": "",
+					"default": "div",
+					"required": false,
+					"input": "static",
+					"description": "Component type name."
+				},
+				{
+					"name": "imports",
+					"title": "Import modules",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "list of modules to import. Example: `import {X} from \"Y\";` (\"react\" applications only)"
+				},
+				{
+					"name": "dest_selector",
+					"title": "Dest. selector",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "destination html element selector. Similar to jQuery selector, but only three simple formats are supported: \"tagname\", \"#element_id\" and \".class_name\"."
+				},
+				{
+					"name": "dest_position",
+					"title": "Dest. position",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "select",
+					"choice_items": [
+						"",
+						"top",
+						"bottom",
+						"before",
+						"after"
+					],
+					"description": "destination position relative to destination element: \"top\", \"bottom\", \"before\" or \"after\". Default: \"bottom\""
+				},
+				{
+					"name": "class",
+					"title": "CSS class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "CSS class name to be added to component"
+				},
+				{
+					"name": "query_name",
+					"title": "Query name",
+					"type": "string",
+					"subType": "query_name",
+					"default": "",
+					"required": false,
+					"input": "select_query",
+					"description": "Query (publication) name from application.queries used as main data context. Page's router will subscribe to this publication automatically."
+				},
+				{
+					"name": "query_params",
+					"title": "Query params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Query (publication) params"
+				},
+				{
+					"name": "custom_data_code",
+					"title": "Custom Data Code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to execute just before data from database is returned (executes before iron-router `data` function returns or in React apps before `getMeteorData` returns). You can modify `data` variable here."
+				},
+				{
+					"name": "components",
+					"title": "Components",
+					"type": "array",
+					"subType": "component",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Component list"
+				},
+				{
+					"name": "text",
+					"title": "Text",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "textarea",
+					"description": "this text will be added into div"
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "section",
+			"derivedFrom": [
+				"component"
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "object_name",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Object name"
+				},
+				{
+					"name": "type",
+					"title": "Type",
+					"type": "string",
+					"subType": "",
+					"default": "section",
+					"required": false,
+					"input": "static",
+					"description": "Component type name."
+				},
+				{
+					"name": "imports",
+					"title": "Import modules",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "list of modules to import. Example: `import {X} from \"Y\";` (\"react\" applications only)"
+				},
+				{
+					"name": "dest_selector",
+					"title": "Dest. selector",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "destination html element selector. Similar to jQuery selector, but only three simple formats are supported: \"tagname\", \"#element_id\" and \".class_name\"."
+				},
+				{
+					"name": "dest_position",
+					"title": "Dest. position",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "select",
+					"choice_items": [
+						"",
+						"top",
+						"bottom",
+						"before",
+						"after"
+					],
+					"description": "destination position relative to destination element: \"top\", \"bottom\", \"before\" or \"after\". Default: \"bottom\""
+				},
+				{
+					"name": "class",
+					"title": "CSS class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "CSS class name to be added to component"
+				},
+				{
+					"name": "query_name",
+					"title": "Query name",
+					"type": "string",
+					"subType": "query_name",
+					"default": "",
+					"required": false,
+					"input": "select_query",
+					"description": "Query (publication) name from application.queries used as main data context. Page's router will subscribe to this publication automatically."
+				},
+				{
+					"name": "query_params",
+					"title": "Query params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Query (publication) params"
+				},
+				{
+					"name": "custom_data_code",
+					"title": "Custom Data Code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to execute just before data from database is returned (executes before iron-router `data` function returns or in React apps before `getMeteorData` returns). You can modify `data` variable here."
+				},
+				{
+					"name": "components",
+					"title": "Components",
+					"type": "array",
+					"subType": "component",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Component list"
+				},
+				{
+					"name": "text",
+					"title": "Text",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "textarea",
+					"description": "this text will be added into section"
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "editable_content",
+			"derivedFrom": [
+				"component"
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "object_name",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Object name"
+				},
+				{
+					"name": "type",
+					"title": "Type",
+					"type": "string",
+					"subType": "",
+					"default": "editable_content",
+					"required": false,
+					"input": "static",
+					"description": "Component type name."
+				},
+				{
+					"name": "imports",
+					"title": "Import modules",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "list of modules to import. Example: `import {X} from \"Y\";` (\"react\" applications only)"
+				},
+				{
+					"name": "dest_selector",
+					"title": "Dest. selector",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "destination html element selector. Similar to jQuery selector, but only three simple formats are supported: \"tagname\", \"#element_id\" and \".class_name\"."
+				},
+				{
+					"name": "dest_position",
+					"title": "Dest. position",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "select",
+					"choice_items": [
+						"",
+						"top",
+						"bottom",
+						"before",
+						"after"
+					],
+					"description": "destination position relative to destination element: \"top\", \"bottom\", \"before\" or \"after\". Default: \"bottom\""
+				},
+				{
+					"name": "class",
+					"title": "CSS class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "CSS class name to be added to component"
+				},
+				{
+					"name": "text_if_empty",
+					"title": "Text if empty",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "textarea",
+					"description": "text to show if no content"
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "cms_content",
+			"derivedFrom": [
+				"component"
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "object_name",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Object name"
+				},
+				{
+					"name": "type",
+					"title": "Type",
+					"type": "string",
+					"subType": "",
+					"default": "cms_content",
+					"required": false,
+					"input": "static",
+					"description": "Component type name."
+				},
+				{
+					"name": "imports",
+					"title": "Import modules",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "list of modules to import. Example: `import {X} from \"Y\";` (\"react\" applications only)"
+				},
+				{
+					"name": "dest_selector",
+					"title": "Dest. selector",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "destination html element selector. Similar to jQuery selector, but only three simple formats are supported: \"tagname\", \"#element_id\" and \".class_name\"."
+				},
+				{
+					"name": "dest_position",
+					"title": "Dest. position",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "select",
+					"choice_items": [
+						"",
+						"top",
+						"bottom",
+						"before",
+						"after"
+					],
+					"description": "destination position relative to destination element: \"top\", \"bottom\", \"before\" or \"after\". Default: \"bottom\""
+				},
+				{
+					"name": "class",
+					"title": "CSS class",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "CSS class name to be added to component"
+				},
+				{
+					"name": "text_if_empty",
+					"title": "Text if empty",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "textarea"
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "plugin",
+			"derivedFrom": [
+				"component"
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "object_name",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Object name"
+				},
+				{
+					"name": "type",
+					"title": "Type",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Component type name."
+				},
+				{
+					"name": "imports",
+					"title": "Import modules",
+					"type": "array",
+					"subType": "string",
+					"default": "",
+					"required": false,
+					"input": "stringlist",
+					"description": "list of modules to import. Example: `import {X} from \"Y\";` (\"react\" applications only)"
+				},
+				{
+					"name": "dest_selector",
+					"title": "Dest. selector",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": "destination html element selector. Similar to jQuery selector, but only three simple formats are supported: \"tagname\", \"#element_id\" and \".class_name\"."
+				},
+				{
+					"name": "dest_position",
+					"title": "Dest. position",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "select",
+					"choice_items": [
+						"",
+						"top",
+						"bottom",
+						"before",
+						"after"
+					],
+					"description": "destination position relative to destination element: \"top\", \"bottom\", \"before\" or \"after\". Default: \"bottom\""
+				},
+				{
+					"name": "query_name",
+					"title": "Query name",
+					"type": "string",
+					"subType": "query_name",
+					"default": "",
+					"required": false,
+					"input": "select_query",
+					"description": "Query (publication) name from application.queries used as main data context. Page's router will subscribe to this publication automatically."
+				},
+				{
+					"name": "query_params",
+					"title": "Query params",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Query (publication) params"
+				},
+				{
+					"name": "custom_data_code",
+					"title": "Custom Data Code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": "Code to execute just before data from database is returned (executes before iron-router `data` function returns or in React apps before `getMeteorData` returns). You can modify `data` variable here."
+				},
+				{
+					"name": "components",
+					"title": "Components",
+					"type": "array",
+					"subType": "component",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": "Component list"
+				},
+				{
+					"name": "properties",
+					"title": "Properties",
+					"type": "object",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "json",
+					"description": "Custom properties. This object will be provided to plugin processing code."
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "gasoline",
+			"derivedFrom": [
+				"object"
+			],
+			"members": [
+				{
+					"name": "type",
+					"title": "Gasoline Type",
+					"type": "string",
+					"subType": "",
+					"default": "gasoline",
+					"required": true,
+					"input": "static"
+				},
+				{
+					"name": "templates",
+					"title": "Templates",
+					"type": "array",
+					"subType": "gas_template",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": ""
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "gas_event",
+			"derivedFrom": [
+				"object"
+			],
+			"members": [
+				{
+					"name": "type",
+					"title": "Gasoline Type",
+					"type": "string",
+					"subType": "",
+					"default": "event",
+					"required": true,
+					"input": "static"
+				},
+				{
+					"name": "event",
+					"title": "Event name",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": ""
+				},
+				{
+					"name": "handler",
+					"title": "Handler name",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": ""
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "gas_node",
+			"derivedFrom": [
+				"object"
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "object_name",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Object name"
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "gas_text",
+			"derivedFrom": [
+				"gas_node"
+			],
+			"members": [
+				{
+					"name": "type",
+					"title": "Gasoline Type",
+					"type": "string",
+					"subType": "",
+					"default": "text",
+					"required": true,
+					"input": "static"
+				},
+				{
+					"name": "text",
+					"title": "Text",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "textarea",
+					"description": ""
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "gas_element",
+			"derivedFrom": [
+				"gas_node"
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "object_name",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Object name"
+				},
+				{
+					"name": "children",
+					"title": "Children",
+					"type": "array",
+					"subType": "gas_node",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": ""
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "gas_handler",
+			"derivedFrom": [
+				"object"
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "object_name",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Object name"
+				},
+				{
+					"name": "type",
+					"title": "Gasoline Type",
+					"type": "string",
+					"subType": "",
+					"default": "handler",
+					"required": true,
+					"input": "static"
+				},
+				{
+					"name": "code",
+					"title": "Code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": ""
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "gas_helper",
+			"derivedFrom": [
+				"object"
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "object_name",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Object name"
+				},
+				{
+					"name": "type",
+					"title": "Gasoline Type",
+					"type": "string",
+					"subType": "",
+					"default": "helper",
+					"required": true,
+					"input": "static"
+				},
+				{
+					"name": "code",
+					"title": "Code",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "javascript",
+					"description": ""
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "gas_template",
+			"derivedFrom": [
+				"gas_element"
+			],
+			"members": [
+				{
+					"name": "name",
+					"title": "Name",
+					"type": "string",
+					"subType": "object_name",
+					"default": "",
+					"required": true,
+					"input": "text",
+					"description": "Object name"
+				},
+				{
+					"name": "children",
+					"title": "Children",
+					"type": "array",
+					"subType": "gas_node",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": ""
+				},
+				{
+					"name": "type",
+					"title": "Gasoline Type",
+					"type": "string",
+					"subType": "",
+					"default": "template",
+					"required": true,
+					"input": "static"
+				},
+				{
+					"name": "handlers",
+					"title": "Event handlers",
+					"type": "array",
+					"subType": "gas_handler",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": ""
+				},
+				{
+					"name": "helpers",
+					"title": "Helpers",
+					"type": "array",
+					"subType": "gas_helper",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": ""
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "gas_html",
+			"derivedFrom": [
+				"gas_element"
+			],
+			"members": [
+				{
+					"name": "children",
+					"title": "Children",
+					"type": "array",
+					"subType": "gas_node",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": ""
+				},
+				{
+					"name": "type",
+					"title": "Gasoline Type",
+					"type": "string",
+					"subType": "",
+					"default": "html",
+					"required": true,
+					"input": "static"
+				},
+				{
+					"name": "element",
+					"title": "Element",
+					"type": "string",
+					"subType": "",
+					"default": "div",
+					"required": true,
+					"input": "static",
+					"description": ""
+				},
+				{
+					"name": "selector",
+					"title": "Selector",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": ""
+				},
+				{
+					"name": "attributes",
+					"title": "Attributes",
+					"type": "array",
+					"subType": "param",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": ""
+				},
+				{
+					"name": "events",
+					"title": "Events",
+					"type": "array",
+					"subType": "gas_event",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": ""
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "gas_loop",
+			"derivedFrom": [
+				"gas_element"
+			],
+			"members": [
+				{
+					"name": "children",
+					"title": "Children",
+					"type": "array",
+					"subType": "gas_node",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": ""
+				},
+				{
+					"name": "type",
+					"title": "Gasoline Type",
+					"type": "string",
+					"subType": "",
+					"default": "loop",
+					"required": true,
+					"input": "static"
+				},
+				{
+					"name": "dataset",
+					"title": "Dataset",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": ""
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "gas_condition",
+			"derivedFrom": [
+				"gas_element"
+			],
+			"members": [
+				{
+					"name": "children",
+					"title": "Children",
+					"type": "array",
+					"subType": "gas_node",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": ""
+				},
+				{
+					"name": "type",
+					"title": "Gasoline Type",
+					"type": "string",
+					"subType": "",
+					"default": "condition",
+					"required": true,
+					"input": "static"
+				},
+				{
+					"name": "condition",
+					"title": "Condition",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": ""
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "gas_condition_true",
+			"derivedFrom": [
+				"gas_element"
+			],
+			"members": [
+				{
+					"name": "children",
+					"title": "Children",
+					"type": "array",
+					"subType": "gas_node",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": ""
+				},
+				{
+					"name": "type",
+					"title": "Gasoline Type",
+					"type": "string",
+					"subType": "",
+					"default": "condition-true",
+					"required": true,
+					"input": "static"
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "gas_condition_false",
+			"derivedFrom": [
+				"gas_element"
+			],
+			"members": [
+				{
+					"name": "children",
+					"title": "Children",
+					"type": "array",
+					"subType": "gas_node",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": ""
+				},
+				{
+					"name": "type",
+					"title": "Gasoline Type",
+					"type": "string",
+					"subType": "",
+					"default": "condition-false",
+					"required": true,
+					"input": "static"
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		},
+		{
+			"objectType": "gas_inclusion",
+			"derivedFrom": [
+				"gas_element"
+			],
+			"members": [
+				{
+					"name": "children",
+					"title": "Children",
+					"type": "array",
+					"subType": "gas_node",
+					"default": "",
+					"required": false,
+					"input": "",
+					"description": ""
+				},
+				{
+					"name": "type",
+					"title": "Gasoline Type",
+					"type": "string",
+					"subType": "",
+					"default": "inclusion",
+					"required": true,
+					"input": "static"
+				},
+				{
+					"name": "template",
+					"title": "Template name",
+					"type": "string",
+					"subType": "",
+					"default": "",
+					"required": false,
+					"input": "text",
+					"description": ""
+				}
+			],
+			"hideDerivedClasses": [
+			],
+			"hideThis": false
+		}
+	]
+}
